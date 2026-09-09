@@ -40,7 +40,7 @@ I work on backend development using C# (.NET, ASP.NET Core, Entity Framework, LI
 |---|---|---|---|---|---|---|---|---|---|
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jest/jest-plain.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" width="30"/> |
 
-### [GitHub Stats Visualization](https://github.com/AndrewLPimenta/github-stats-1)
+## [GitHub Stats Visualization](https://github.com/AndrewLPimenta/github-stats-1)
 
 <a href="https://github.com/AndrewLPimenta/github-stats-1">
   <img src="https://github.com/AndrewLPimenta/github-stats-1/blob/master/generated/overview.svg#gh-dark-mode-only" />
