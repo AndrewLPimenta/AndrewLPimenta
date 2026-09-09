@@ -1,11 +1,10 @@
-### 👨🏼‍💻 Andrew Pimenta
-
 # [**_Full Stack Developer_**](https://github.com/AndrewLPimenta/github-stats-1)
 
+### 👨🏼‍💻 Andrew Pimenta
 
 My name is Andrew Pimenta, I am 23 years old, from Volta Redonda/RJ, currently pursuing a degree in Information Systems with a focus on Full Stack development and building scalable applications that deliver real business value.  
 
-I work on backend development using Java (Spring Boot, Spring Security, Spring Data, JPA/Hibernate) and Node.js (TypeScript), and on the frontend with React.js and Next.js, creating modern and high-performance interfaces. I have experience developing REST APIs, microservices, system integration, and cloud deployments.
+I work on backend development using C# (.NET, ASP.NET Core, Entity Framework, LINQ) and Node.js (TypeScript), and on the frontend with React.js and Next.js, creating modern and high-performance interfaces. I have experience developing REST APIs, microservices, system integration, and cloud deployments.
 
 <p align="left">
     <a href="https://github.com/andrewlpimenta?tab=repositories&sort=stargazers">
@@ -35,7 +34,7 @@ I work on backend development using Java (Spring Boot, Spring Security, Spring D
 
 | | | | | | | | | | |
 |---|---|---|---|---|---|---|---|---|---|
-| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" width="30"/> |
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-plain.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/supabase/supabase-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" width="30"/> | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg" width="30"/> |
 
 | | | | | | | | | | |
 |---|---|---|---|---|---|---|---|---|---|
