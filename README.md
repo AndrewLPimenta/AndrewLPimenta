@@ -2,7 +2,7 @@
 
 ### 👨🏼‍💻 Andrew Pimenta
 
-My name is Andrew Pimenta, I am 23 years old, from Volta Redonda/RJ, currently pursuing a degree in Information Systems with a focus on Full Stack development and building scalable applications that deliver real business value.  
+My name is Andrew Pimenta, I am 24 years old, from Volta Redonda/RJ, currently pursuing a degree in Information Systems with a focus on Full Stack development and building scalable applications that deliver real business value.  
 
 I work on backend development using C# (.NET, ASP.NET Core, Entity Framework, LINQ) and Node.js (TypeScript), and on the frontend with React.js and Next.js, creating modern and high-performance interfaces. I have experience developing REST APIs, microservices, system integration, and cloud deployments.
 
