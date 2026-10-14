@@ -43,7 +43,7 @@ export default function ContatoPage() {
       <section aria-label="Outros canais" className="wrap pb-32">
         <div className="grid gap-3 md:grid-cols-3">
           {[
-            { titulo: "WhatsApp", texto: "(24) 99815-1263. O jeito mais rápido de falar comigo.", href: site.links.whatsapp, Icone: WhatsAppIcon },
+            { titulo: "WhatsApp", texto: "Contato mais rápido.", href: site.links.whatsapp, Icone: WhatsAppIcon },
             { titulo: "LinkedIn", texto: "Trajetória completa e recomendações.", href: site.links.linkedin, Icone: LinkedInIcon },
             { titulo: "GitHub", texto: "Código dos projetos públicos.", href: site.links.github, Icone: GitHubIcon },
           ].map(({ titulo, texto, href, Icone }) => (
