@@ -1,0 +1,602 @@
+@import "tailwindcss";
+
+/* "dark:" segue o botão de tema (data-theme no <html>), não só o sistema. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/*
+ * Tokens de design: cinza, azul e dourado.
+ * Os valores mudam com o tema (data-theme="light" | "dark" no <html>);
+ * as classes do Tailwind apontam para as variáveis.
+ */
+:root {
+  color-scheme: light;
+  --paper: #fbfbfd;
+  --mist: #f1f3f6;
+  --mist-2: #e4e7ec;
+  --surface: #ffffff;
+  --surface-2: #f4f6f9;
+  --surface-3: #eef0f4;
+  --track: #e8ebf0;
+  --seg-on: #ffffff;
+  --line: #dadee5;
+  --hairline: #e6e9ee;
+  --ring: #e1e5eb;
+  --ink: #1b1f26;
+  --ink-2: #454d59;
+  --muted: #59626f;
+  --chip-ink: #3a424d;
+  --azul: #1e5acf;
+  --azul-hover: #174ab0;
+  --azul-solid: #1e5acf;
+  --azul-solid-hover: #174ab0;
+  --marinho: #0f1e36;
+  --ouro-ink: #7a5d17;
+  --ouro-num: #9a7726;
+  --frame-bar: #eceef2;
+  --frame-dot: #d3d7de;
+  --grabber: #d5d9e0;
+  --nav-bg: rgb(251 251 253 / 0.78);
+  --hero-blob: #0d1626;
+
+  /* Luz e vidro */
+  --glow-1: rgb(47 107 224 / 0.26);
+  --glow-2: rgb(216 184 103 / 0.30);
+  --glow-3: rgb(143 179 255 / 0.36);
+  --spot: rgb(47 107 224 / 0.09);
+  --spot-border: rgb(47 107 224 / 0.55);
+  --glass-bg: rgb(255 255 255 / 0.66);
+  --glass-top: rgb(255 255 255 / 0.95);
+  --glass-edge: rgb(27 31 38 / 0.07);
+  --glass-shadow: 0 24px 60px -32px rgb(15 30 54 / 0.35);
+
+  /* Interfaces desenhadas (mocks) */
+  --mock-bg: #f4f6f9;
+  --mock-panel: #ffffff;
+  --mock-line: #e3e7ed;
+  --photo-1: #c9d6ea;
+  --photo-2: #e9dcc0;
+  --photo-3: #d6dde8;
+  --photo-4: #b8c8e2;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0e1218;
+  --mist: #171c24;
+  --mist-2: #222934;
+  --surface: #1b212a;
+  --surface-2: #212833;
+  --surface-3: #262e3a;
+  --track: #1d232c;
+  --seg-on: #39424f;
+  --line: #2b333f;
+  --hairline: #2b333f;
+  --ring: #313a47;
+  --ink: #eef1f5;
+  --ink-2: #b7c0cc;
+  --muted: #9aa4b2;
+  --chip-ink: #d2d8e0;
+  --azul: #7fa8ff;
+  --azul-hover: #a5c2ff;
+  --azul-solid: #2f6be0;
+  --azul-solid-hover: #3d78ec;
+  --marinho: #132849;
+  --ouro-ink: #d8b867;
+  --ouro-num: #d8b867;
+  --frame-bar: #2a313c;
+  --frame-dot: #465061;
+  --grabber: #3a4350;
+  --nav-bg: rgb(14 18 24 / 0.72);
+  --hero-blob: #16243d;
+
+  --glow-1: rgb(47 107 224 / 0.40);
+  --glow-2: rgb(216 184 103 / 0.16);
+  --glow-3: rgb(90 130 230 / 0.30);
+  --spot: rgb(127 168 255 / 0.10);
+  --spot-border: rgb(127 168 255 / 0.6);
+  --glass-bg: rgb(27 33 42 / 0.58);
+  --glass-top: rgb(255 255 255 / 0.09);
+  --glass-edge: rgb(255 255 255 / 0.07);
+  --glass-shadow: 0 24px 60px -32px rgb(0 0 0 / 0.7);
+
+  --mock-bg: #121721;
+  --mock-panel: #1b222d;
+  --mock-line: #2a3240;
+  --photo-1: #2b3a55;
+  --photo-2: #4a4232;
+  --photo-3: #333d4d;
+  --photo-4: #24365a;
+}
+
+@theme inline {
+  --font-sans: "Instrument Sans Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --color-paper: var(--paper);
+  --color-mist: var(--mist);
+  --color-mist-2: var(--mist-2);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-track: var(--track);
+  --color-seg-on: var(--seg-on);
+  --color-line: var(--line);
+  --color-hairline: var(--hairline);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-chip-ink: var(--chip-ink);
+  --color-frame-bar: var(--frame-bar);
+  --color-frame-dot: var(--frame-dot);
+  --color-grabber: var(--grabber);
+
+  --color-azul: var(--azul);
+  --color-azul-hover: var(--azul-hover);
+  --color-marinho: var(--marinho);
+  --color-hero-blob: var(--hero-blob);
+
+  --color-ouro: #d8b867;          /* sobre o azul-marinho */
+  --color-ouro-ink: var(--ouro-ink);
+  --color-ouro-num: var(--ouro-num);
+
+  --color-dark-text: #c5cedc;
+  --color-dark-soft: #a9b6c9;
+  --color-dark-body: #d7dee8;
+  --color-dark-link: #9dbbff;
+
+  /*
+   * Nomes de cor do shadcn/ui, apontando para a paleta do site.
+   * Assim os componentes do 21st.dev e do shadcn já entram com as cores certas
+   * nos dois temas. (Aqui "muted" continua sendo o cinza de texto do site;
+   * o equivalente do shadcn para texto secundário é muted-foreground.)
+   */
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--ink);
+  --color-popover: var(--surface);
+  --color-popover-foreground: var(--ink);
+  --color-primary: var(--azul-solid);
+  --color-primary-hover: var(--azul-solid-hover);
+  --color-primary-foreground: #ffffff;
+  --color-secondary: var(--mist);
+  --color-secondary-foreground: var(--ink);
+  --color-muted-foreground: var(--muted);
+  --color-accent: var(--mist);
+  --color-accent-foreground: var(--ink);
+  --color-border: var(--line);
+  --color-input: var(--line);
+  --color-ring: var(--azul);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    transition:
+      background-color 0.3s ease,
+      color 0.3s ease;
+    font-family: var(--font-sans);
+    font-size: 1.125rem;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    color: var(--color-azul);
+    text-decoration: none;
+  }
+  a:hover {
+    color: var(--color-azul-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-azul);
+    outline-offset: 3px;
+    border-radius: 8px;
+  }
+}
+
+@layer components {
+  .wrap {
+    margin-inline: auto;
+    max-width: 1080px;
+    padding-inline: 1.5rem;
+  }
+  .wide {
+    margin-inline: auto;
+    max-width: 1320px;
+    padding-inline: 0.75rem;
+  }
+
+  /* Tipografia: tracking negativo cresce com o tamanho. */
+  .display-1,
+  .display-2,
+  .display-3 {
+    text-wrap: balance;
+  }
+  .display-1 {
+    margin: 0;
+    font-size: clamp(2.75rem, 7.2vw, 5.5rem);
+    line-height: 1.03;
+    letter-spacing: -0.04em;
+    font-weight: 600;
+  }
+  .display-2 {
+    margin: 0;
+    font-size: clamp(2.25rem, 4.8vw, 3.75rem);
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+    font-weight: 600;
+  }
+  .display-3 {
+    margin: 0;
+    font-size: clamp(1.875rem, 3.4vw, 2.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    font-weight: 600;
+  }
+  .lead {
+    margin: 0;
+    font-size: clamp(1.1875rem, 2vw, 1.4375rem);
+    line-height: 1.42;
+    letter-spacing: -0.01em;
+    color: var(--color-muted);
+  }
+
+  .tile {
+    border-radius: 28px;
+    overflow: hidden;
+  }
+
+  /* Botões em pílula com resposta no toque. */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding-inline: 22px;
+    border-radius: 999px;
+    border: 0;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+      transform 0.12s ease-out,
+      background-color 0.2s;
+  }
+  .pill:hover {
+    text-decoration: none;
+  }
+  .pill:active {
+    transform: scale(0.97);
+  }
+  .pill-blue {
+    background: var(--azul-solid);
+    color: #fff;
+  }
+  .pill-blue:hover {
+    background: var(--azul-solid-hover);
+    color: #fff;
+  }
+  .pill-line {
+    background: transparent;
+    color: var(--color-azul);
+    box-shadow: inset 0 0 0 1px var(--color-azul);
+  }
+  .pill-line:hover {
+    background: color-mix(in srgb, var(--azul) 8%, transparent);
+    color: var(--color-azul-hover);
+  }
+  .pill-light {
+    background: #fff;
+    color: var(--color-marinho);
+  }
+  .pill-light:hover {
+    background: #e9eef7;
+    color: var(--color-marinho);
+  }
+  .pill-sm {
+    min-height: 36px;
+    padding-inline: 16px;
+    font-size: 0.875rem;
+  }
+
+  .link-dark {
+    color: var(--color-dark-link);
+  }
+  .link-dark:hover {
+    color: #c3d5ff;
+  }
+
+  .placeholder {
+    font-style: italic;
+    color: var(--color-muted);
+  }
+
+  /* Material translúcido da barra de navegação. */
+  .glass-nav {
+    background: var(--nav-bg);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+  }
+
+  .rise {
+    animation: rise 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  }
+}
+
+/* ---------- Luz, vidro e brilho ---------- */
+@layer components {
+  /* Wallpaper: manchas de luz desfocadas que se movem devagar, como os papéis de parede da Apple. */
+  .wallpaper {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .wallpaper .blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(70px);
+    will-change: transform;
+    animation: drift 24s ease-in-out infinite alternate;
+  }
+  .wallpaper .b1 {
+    width: min(62vw, 860px);
+    aspect-ratio: 1;
+    left: -14%;
+    top: -34%;
+    background: radial-gradient(circle at 40% 40%, var(--w1), transparent 66%);
+  }
+  .wallpaper .b2 {
+    width: min(54vw, 760px);
+    aspect-ratio: 1;
+    right: -12%;
+    top: -18%;
+    background: radial-gradient(circle at 50% 50%, var(--w2), transparent 64%);
+    animation-duration: 30s;
+    animation-delay: -8s;
+  }
+  .wallpaper .b3 {
+    width: min(70vw, 980px);
+    aspect-ratio: 1;
+    left: 18%;
+    bottom: -62%;
+    background: radial-gradient(circle at 50% 50%, var(--w3), transparent 62%);
+    animation-duration: 36s;
+    animation-delay: -16s;
+  }
+  .wallpaper .grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.07;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wallpaper-hero {
+    --w1: var(--glow-1);
+    --w2: var(--glow-2);
+    --w3: var(--glow-3);
+  }
+  .wallpaper-navy {
+    --w1: rgb(47 107 224 / 0.55);
+    --w2: rgb(216 184 103 / 0.26);
+    --w3: rgb(110 150 255 / 0.30);
+  }
+  .wallpaper-soft {
+    --w1: var(--glow-3);
+    --w2: var(--glow-2);
+    --w3: var(--glow-1);
+  }
+  .wallpaper-soft .blob {
+    opacity: 0.7;
+  }
+
+  /* Vidro */
+  .glass {
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    backdrop-filter: blur(24px) saturate(160%);
+    box-shadow:
+      inset 0 1px 0 var(--glass-top),
+      0 0 0 1px var(--glass-edge),
+      var(--glass-shadow);
+  }
+  .glass-dark {
+    background: rgb(255 255 255 / 0.06);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    backdrop-filter: blur(20px) saturate(150%);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.14),
+      0 0 0 1px rgb(255 255 255 / 0.08);
+  }
+
+  /* Spotlight: luz que segue o ponteiro dentro do card, com borda acesa. */
+  .spotlight {
+    position: relative;
+    isolation: isolate;
+  }
+  .spotlight::before,
+  .spotlight::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  .spotlight::before {
+    z-index: -1;
+    background: radial-gradient(560px circle at var(--x, 50%) var(--y, 0%), var(--spot), transparent 45%);
+  }
+  .spotlight::after {
+    padding: 1px;
+    background: radial-gradient(320px circle at var(--x, 50%) var(--y, 0%), var(--spot-border), transparent 60%);
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+  .spotlight-dark {
+    --spot: rgb(216 184 103 / 0.12);
+    --spot-border: rgb(216 184 103 / 0.6);
+  }
+  @media (hover: hover) {
+    .spotlight:hover::before,
+    .spotlight:hover::after {
+      opacity: 1;
+    }
+  }
+
+  /* Aura girando atrás do avatar */
+  .aura {
+    position: absolute;
+    inset: -16px;
+    border-radius: 9999px;
+    background: conic-gradient(from 0deg, #2f6be0, #8fb3ff, #d8b867, #2f6be0);
+    filter: blur(18px);
+    opacity: 0.55;
+    animation: spin 9s linear infinite;
+  }
+
+  /* Texto com brilho sutil, para números de destaque */
+  .text-shine {
+    /* O texto recortado no fundo some onde a letra passa da caixa (espaçamento negativo).
+       Folga nas bordas, compensada na margem, para a última letra não ficar cortada. */
+    padding-inline-end: 0.12em;
+    margin-inline-end: -0.12em;
+    padding-block-end: 0.06em;
+    background: linear-gradient(180deg, var(--ink) 30%, color-mix(in srgb, var(--azul) 70%, var(--ink)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-shine-dark {
+    /* O texto recortado no fundo some onde a letra passa da caixa (espaçamento negativo).
+       Folga nas bordas, compensada na margem, para a última letra não ficar cortada. */
+    padding-inline-end: 0.12em;
+    margin-inline-end: -0.12em;
+    padding-block-end: 0.06em;
+    background: linear-gradient(180deg, #ffffff 35%, #d8b867);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(5%, 7%, 0) scale(1.08);
+  }
+  100% {
+    transform: translate3d(-4%, 3%, 0) scale(0.95);
+  }
+}
+
+/* Pulso de luz que percorre o funil de vendas */
+@keyframes funil-pulso {
+  0% {
+    top: 1.25rem;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  88% {
+    opacity: 1;
+  }
+  100% {
+    top: calc(100% - 1.75rem);
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .wrap {
+    padding-inline: 1rem;
+  }
+  .wide {
+    padding-inline: 0.5rem;
+  }
+  .tile {
+    border-radius: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass-nav {
+    background: var(--color-paper);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Troca de aba na seção de serviços */
+@keyframes servico-entra {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Página Demo: órbita de tecnologias e brilho que atravessa o botão */
+@keyframes orbita-gira {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes brilho-passa {
+  0% {
+    left: -60%;
+  }
+  60%,
+  100% {
+    left: 130%;
+  }
+}
