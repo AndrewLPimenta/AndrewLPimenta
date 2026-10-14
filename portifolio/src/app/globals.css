@@ -553,6 +553,20 @@
   }
 }
 
+/* Troca de tema: o círculo (theme-toggle.tsx) substitui o fade padrão. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+/* Sem as transições de cor durante a troca, para o círculo revelar o tema já pronto. */
+html.trocando-tema,
+html.trocando-tema *,
+html.trocando-tema *::before,
+html.trocando-tema *::after {
+  transition: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useSyncExternalStore, type MouseEvent } from "react";
 
 type Tema = "light" | "dark";
 
@@ -18,13 +18,45 @@ export function ThemeToggle() {
   const tema = useSyncExternalStore(assinar, lerTema, () => "light" as Tema);
   const proximo: Tema = tema === "dark" ? "light" : "dark";
 
-  function alternar() {
+  function aplicar() {
     document.documentElement.dataset.theme = proximo;
     try {
       localStorage.setItem("tema", proximo);
     } catch {
       // Sem armazenamento local: o tema vale só para esta visita.
     }
+  }
+
+  // Círculo que se expande a partir do botão (View Transitions API), 750ms ease-in-out.
+  async function alternar(evento: MouseEvent<HTMLButtonElement>) {
+    const semMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!document.startViewTransition || semMovimento) {
+      aplicar();
+      return;
+    }
+
+    const { left, top, width, height } = evento.currentTarget.getBoundingClientRect();
+    const x = left + width / 2;
+    const y = top + height / 2;
+    const raio = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+
+    const raiz = document.documentElement;
+    const transicao = document.startViewTransition(() => {
+      raiz.classList.add("trocando-tema");
+      aplicar();
+    });
+    const limpar = () => raiz.classList.remove("trocando-tema");
+    transicao.finished.then(limpar, limpar);
+
+    try {
+      await transicao.ready;
+    } catch {
+      return;
+    }
+    raiz.animate(
+      { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${raio}px at ${x}px ${y}px)`] },
+      { duration: 750, easing: "ease-in-out", pseudoElement: "::view-transition-new(root)" },
+    );
   }
 
   return (
